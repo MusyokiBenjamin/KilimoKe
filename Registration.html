@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KilimoKe Website</title>
+
+    <link rel="stylesheet" href="style.css/style.css">
+</head>
+<body>
+    
+    
+    <section class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="Home.html" title="Logo">
+                    <img src="Images/img 015.jpg" alt="KilimoKe Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="Home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="AboutUs.html">AboutUs</a>
+                    </li>
+                     <li>
+                        <a href="Login.html">Login</a>
+                    </li>
+                    <li>
+                        <a href="Contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="Registration.html">Registration</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+<form method="post" id="frmRegistration" name="frmRegistration"  onReset="resetForm()">
+    
+    <section class="kilimoke-registration">
+        <div class="container">
+            <h2 class="text-center">Registration Form</h2>
+    <p>Please fill in the form below in order for you to be registered.</p>        
+    
+    <label for="txtSurname">Surname:</label>
+    <input type="text" onkeyup="validate()" value="" placeholder="Enter your surname" id="txtSurname" name="txtSurname"/>
+    <span id="spnIsSurnameValid"></span><br/><br/>
+    
+    <label for="txtOtherNames">Other Names:</label>
+    <input type="text" onkeyup="validate()" value="" placeholder="Enter your other names" id="txtOtherNames" name="txtOtherNames"/>
+    <span id="spnIsOtherNamesValid"></span><br/><br/>
+    
+    <label for="txtPhoneNumber">Phone Number:</label>
+    <input type="text" onkeyup="validate()" value="" placeholder="Enter your phone number" id="txtPhoneNumber" name="txtPhoneNumber"/>
+    <span id="spnIsPhoneNumberValid"></span><br/><br/>
+    
+    <label for="txtEmail">Email:</label>
+    <input type="text" onkeyup="validate()" value="" placeholder="Enter your email" id="txtEmail" name="txtEmail"/>
+    <span id="spnIsEmailValid"></span><br/><br/>
+    
+    <label for="pwdRegistration">Password:</label>
+    <input type="password" onkeyup="validate()" value="" placeholder="Enter your password" id="pwdRegistration" name="pwdRegistration"/>
+    <span id="spnIsPasswordValid"></span><br/><br/>
+
+    <label for="cpwdRegistration">Confirm Password:</label>
+    <input type="password" onkeyup="validate()" value="" placeholder="Re-enter your password" id="cpwdRegistration" name="cpwdRegistration"/>
+    <span id="spnIsCPasswordValid"></span><br/><br/>
+    
+    <label for="rdbGender">Select Gender:</label>
+    <input type="radio" value="Male" id="rdbMale" name="rdbGender"/>
+    <label for="rdbMale">Male</label>
+    <input type="radio" value="Female" id="rdbFemale" name="rdbGender"/>
+    <label for="rdbFemale">Female</label>
+    <span id="spnIsGenderValid"></span><br/><br/>		
+
+    <button type="button" onclick="alert('You have successfuly registered on KiliimoKe')">Sign up</button>
+    <input type="submit"  class="btn btn-inverse" value="SIGN UP"/>
+    <input type="reset"  class="btn btn-inverse" value="RESET"/>
+        
+</form>
+
+
+<script type="text/javascript">
+    
+    function validate()
+    {
+        // assume surname is valid
+        var isSurnameValid = true;
+        
+        // assume other names is valid
+        var isOtherNamesValid = true;
+        
+        // assume phone number is valid
+        var isPhoneNumberValid = true;	
+        
+        // assume email is valid
+        var isEmailValid = true;			
+        
+        // assume password is valid
+        var isPasswordValid = true;
+        
+        // assume confirm password is valid
+        var isCPasswordValid = true;
+        
+        // assume gender is valid
+        var isGenderValid = true;
+        
+        
+        
+        // Surname
+        // if value of txtSurname field is empty
+        if (document.getElementById("txtSurname").value == "")
+            {
+                isSurnameValid = false; // consider surname is not valid
+                document.getElementById("spnIsSurnameValid").innerHTML = "&#x2716; Please enter your surname.";
+                document.getElementById("spnIsSurnameValid").style.color = "red";
+            }
+        // if value of txtSurname field is not a correct surname
+        else if (/^[a-zA-Z ]{2,30}$/.test (document.getElementById("txtSurname").value) == false)
+            {
+                isSurnameValid = false; // consider surname is not valid
+                document.getElementById("spnIsSurnameValid").innerHTML = "&#x2716; Please enter a correct surname.";
+                document.getElementById("spnIsSurnameValid").style.color = "red";
+            }
+        // if value of txtSurname field is not empty
+        else
+            {
+                isSurnameValid = true; // consider surname is valid
+                document.getElementById("spnIsSurnameValid").innerHTML = "&#x2714; Valid";
+                document.getElementById("spnIsSurnameValid").style.color = "green";
+            }
+                    
+        
+        // Other Names
+        // if value of txtOtherNames field is empty
+        if (document.getElementById("txtOtherNames").value == "")
+            {
+                isOtherNamesValid = false;  // consider other names is not valid
+                document.getElementById("spnIsOtherNamesValid").innerHTML = "&#x2716; Please enter your other names.";
+                document.getElementById("spnIsOtherNamesValid").style.color = "red";
+            }
+        // if value of txtOtherNames field is not a correct surname
+        else if (/^[a-zA-Z ]{2,30}$/.test (document.getElementById("txtOtherNames").value) == false)
+            {
+                isOtherNamesValid = false; // consider other names is not valid
+                document.getElementById("spnIsOtherNamesValid").innerHTML = "&#x2716; Please enter a correct other names.";
+                document.getElementById("spnIsOtherNamesValid").style.color = "red";
+            }
+        // if value of txtOtherNames field is not empty
+        else
+            {
+                isOtherNamesValid = true; // consider other names is valid
+                document.getElementById("spnIsOtherNamesValid").innerHTML = "&#x2714; Valid";
+                document.getElementById("spnIsOtherNamesValid").style.color = "green";
+            }
+        
+        
+        // Phone Number
+        // if value of txtPhoneNumber field is = ""
+        if (document.getElementById("txtPhoneNumber").value == "")
+            {
+                isPhoneNumberValid = false;  // consider phone number is not valid
+                document.getElementById("spnIsPhoneNumberValid").innerHTML = "&#x2716; Please enter your phone number.";
+                document.getElementById("spnIsPhoneNumberValid").style.color = "red";
+            }
+        // if value of txtPhoneNumber field is not a correct phone number
+        else if (/^\d{10}$/.test (document.getElementById("txtPhoneNumber").value) == false)
+            {
+                isPhoneNumberValid = false; // consider phone number is not valid
+                document.getElementById("spnIsPhoneNumberValid").innerHTML = "&#x2716; Please enter a correct phone number.";
+                document.getElementById("spnIsPhoneNumberValid").style.color = "red";
+            }
+        // if value of txtPhoneNumber field is not empty
+        else
+            {
+                isPhoneNumberValid = true; // consider phone number is valid
+                document.getElementById("spnIsPhoneNumberValid").innerHTML = "&#x2714; Valid";
+                document.getElementById("spnIsPhoneNumberValid").style.color = "green";
+            }
+        
+        
+        //Email
+        // if value of txtEmail field is = ""
+        if (document.getElementById("txtEmail").value == "")
+            {
+                isEmailValid = false;  // consider Email is not valid
+                document.getElementById("spnIsEmailValid").innerHTML = "&#x2716; Please enter your email.";
+                document.getElementById("spnIsEmailValid").style.color = "red";
+            }
+        // if value of txtEmail field is not a correct email address
+        else if ( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g.test (document.getElementById("txtEmail").value) == false)
+            {
+                isEmailValid = false; // consider email is not valid
+                document.getElementById("spnIsEmailValid").innerHTML = "&#x2716; Please enter a correct email.";
+                document.getElementById("spnIsEmailValid").style.color = "red";
+            }
+        // if value of txtEmail field is not empty
+        else
+            {
+                isEmailValid = true; // consider email is valid
+                document.getElementById("spnIsEmailValid").innerHTML = "&#x2714; Valid";
+                document.getElementById("spnIsEmailValid").style.color = "green";
+            }
+        
+        
+        //Password
+        // if value of txtpwdRegistration field is empty
+        if (document.getElementById("pwdRegistration").value == "")
+            {
+                isPasswordValid = false;  // consider password is not valid
+                document.getElementById("spnIsPasswordValid").innerHTML = "&#x2716; Please enter your password.";
+                document.getElementById("spnIsPasswordValid").style.color = "red";
+            }
+        // if value of pwdRegistration field is not empty
+        else
+            {
+                isPasswordValid = true; // consider password is valid
+                document.getElementById("spnIsPasswordValid").innerHTML = "&#x2714; Valid";
+                document.getElementById("spnIsPasswordValid").style.color = "green";
+            }
+        
+        
+        //Confirm Password
+        // if value of txtCpwdRegistration field is empty
+        if (document.getElementById("cpwdRegistration").value == "")
+            {
+                isCPasswordValid = false;  // consider confirm password is not valid
+                document.getElementById("spnIsCPasswordValid").innerHTML = "&#x2716; Please re-enter your password.";
+                document.getElementById("spnIsCPasswordValid").style.color = "red";
+            }
+        // if confirm password is not equal to password
+        else if(document.getElementById("cpwdRegistration").value != document.getElementById("pwdRegistration").value)
+            {
+                isCPasswordValid = false;  // consider confirm password is not valid
+                document.getElementById("spnIsCPasswordValid").innerHTML = "&#x2716; Password and confirm password should be the same.";
+                document.getElementById("spnIsCPasswordValid").style.color = "red";
+            }
+        // if confirm password field is not empty and is same as password
+        else
+            {
+                isCPasswordValid = true;  // consider confirm password is valid
+                document.getElementById("spnIsCPasswordValid").innerHTML = "&#x2714; Valid";
+                document.getElementById("spnIsCPasswordValid").style.color = "green";
+            }
+        
+        
+        // Gender
+        // if rdbMale radio button is not checked and rdbFemale radio button is not checked
+        if (document.getElementById("rdbMale").checked != true && document.getElementById("rdbFemale").checked != true)
+            {
+                isGenderValid = false; // consider gender is not valid
+                document.getElementById("spnIsGenderValid").innerHTML = "&#x2716; Please select your gender.";
+                document.getElementById("spnIsGenderValid").style.color = "red";					
+            }
+        // if rdbMale radio button is checked or rdbFemale radio button is checked
+        else
+            {
+                isGenderValid = true; // consider gender is valid
+                document.getElementById("spnIsGenderValid").innerHTML = "&#x2714; Valid";
+                document.getElementById("spnIsGenderValid").style.color = "green";
+            }
+        
+        
+        // if surname is not valid OR other namers is not valid OR if phone number is not valid OR email is not valid OR password is not valid OR confirm password is not valid OR gender is not valid
+        if(isSurnameValid == false || isOtherNamesValid == false || isPhoneNumberValid ==false || isEmailValid == false || isPasswordValid == false || isCPasswordValid == false || isGenderValid == false)
+            {
+                return false; // do not submit the form
+            }
+        else
+            {
+                return true; //submit the form
+            }
+            
+    }
+    
+
+    
+    function resetForm()
+    {
+        document.getElementById("spnIsSurnameValid").innerHTML="";
+        document.getElementById("spnIsOtherNamesValid").innerHTML="";
+        document.getElementById("spnIsPhoneNumberValid").innerHTML="";
+        document.getElementById("spnIsEmailValid").innerHTML="";
+        document.getElementById("spnIsPasswordValid").innerHTML="";
+        document.getElementById("spnIsCPasswordValid").innerHTML="";
+        document.getElementById("spnIsGenderValid").innerHTML="";
+        document.getElementById("rdbMale").checked = false;
+        document.getElementById("rdbFemale").checked = false;
+    }
+
+</script>
+
+<div class="footer-container"><!-- Begin Footer -->
+    <div class="container">
+        <div class="row footer-row">
+            <div class="span3 footer-col">
+                <h5>About Us</h5>
+               <img src="Images/img 016.jpg" alt="KilimoKe" /><br /><br />
+                <address>
+                    <strong>KilimoKe</strong><br />
+                    P.O. Box 143 - 00800 Nairobi,<br />
+                    Kenya<br />
+                </address>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/" class="social-icon facebook"></a></li>
+                    <li><a href="https://twitter.com/" class="social-icon twitter"></a></li>
+                    <li><a href="https://dribbble.com/" class="social-icon dribble"></a></li>
+                    <li><a href="https://rss.com/" class="social-icon rss"></a></li>
+                    <li><a href="https://forrst.me/" class="social-icon forrst"></a></li>
+                </ul>
+            </div>
+            <div class="span3 footer-col">
+                <h5>Latest Tweets</h5>
+                <ul>
+                    <li><a href="#">@kilimoke</a>Available machines from the U.S</li>
+                    <li><a href="#">@kilimoke</a>New affordable tractors available for shipping</li>
+                    <li><a href="#">@kilimoke</a>Farmers are enjoying the new machinery in their farms </li>
+                </ul>
+            </div>
+            <div class="span3 footer-col">
+                <h5>Latest Posts</h5>
+                 <ul class="post-list">
+                    <li><a href="blog-single1.htm">Massey Ferguson machine is very reliable</a></li>
+                    <li><a href="blog-single2.htm">Farmers are adopting tech</a></li>
+                    <li><a href="blog-single3.htm">Farmers need to be educated</a></li>
+                    <li><a href="blog-single4.htm">Review: This machine is so reliable </a></li>
+                    <li><a href="blog-single5.htm">Massey Ferguson; We produce the best, ALWAYS</a></li>
+                </ul>
+            </div>
+          
+
+        <div class="row"><!-- Begin Sub Footer -->
+            <div class="span12 footer-col footer-sub">
+                <div class="row no-margin">
+                    <div class="span6"><span class="text-center">Copyright &copy 2024 KilimoKe. All rights reserved.</span></div>
+                    <div class="span6">
+                        <span class="right">
+                        <a href="Home.html">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="AboutUs.html">About Us</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="Login.html">Login</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="Contact.html">Contact</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Sub Footer -->
+
+    </div>
+</div><!-- End Footer --> 
+</body>
+</html>

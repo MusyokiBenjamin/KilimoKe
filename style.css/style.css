@@ -1,0 +1,265 @@
+/* CSS for All */
+*{
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Georgia, 'Times New Roman', Times, serif, Helvetica, sans-serif;
+    background: linear-gradient(to right, #f7f7f8, #f5f6f7)
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 2%;
+}
+.img-responsive{
+    width: 80%;
+}
+.img-curve{
+    border-radius: 15px;
+}
+
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-white{
+    color: rgb(10, 0, 0);
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+a{
+    color: #00040a;
+    text-decoration: none;
+}
+a:hover{
+    color: #00ff6a;
+}
+.btn{
+    padding: 1%;
+    border: none;
+    font-size: 2rem;
+    border-radius: 5px;
+}
+.btn-primary{
+    background-color: #fafafc;
+    color: white;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    color: white;
+    background-color: #fafafd;
+}
+h2{
+    color: #2f3542;
+    font-size: 2rem;
+    margin-bottom: 2%;
+}
+h3{
+    font-size: 1.5rem;
+}
+.float-container{
+    position: relative;
+}
+.float-text{
+    position: absolute;
+    bottom: 50px;
+    left: 40%;
+}
+fieldset{
+    border: 1px solid white;
+    margin: 5%;
+    padding: 3%;
+    border-radius: 5px;
+}
+#slider {
+    width: 350%; /* Set the width of the slider container */
+    height: 350px; /* Set the height of the slider container */
+    overflow:hidden; /* Hide overflowing images */
+    border: 1px solid #ccc;
+    object-fit: cover;
+    display: flex;
+  transition: transform 0.3s ease;
+  }
+
+
+/* CSS for navbar section */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 50px;
+  }
+  
+  nav li a {
+    text-decoration: red;
+    color: #333;
+  }
+
+  
+  
+  /* Style for the active link */
+  nav li.active a {
+animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  
+
+.logo{
+    width: 30%;
+    float: right;
+}
+.menu{
+    line-height: 100px;
+}
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 2%;
+    font-weight: bolder;
+}
+  
+/* CSS for KilimoKe Menu */
+.kilimoke-menu{
+    background-color: rgb(0, 255, 13);
+    padding: 4% 0;
+}
+.kilimoke-products-box{
+    width: 43%;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+    background-color: rgb(0, 255, 55);
+    border-radius: 15px;
+}
+
+.kilimoke-products-img{
+    width: 50%;
+    float: left;
+}
+
+.KilimoKe-menu-desc{
+    width: 70%;
+    float: left;
+    margin-left: 8%;
+}
+
+.Product price{
+    font-size: 1.2rem;
+    margin: 2% 0;
+}
+.Product detail{
+    font-size: 1rem;
+    color: #747d8c;
+}
+
+
+
+
+
+/* CSS for Social */
+.social ul{
+    list-style-type: none;
+}
+.social ul li{
+    display: inline;
+    padding: 1%;
+}
+
+
+
+/* for Order Section */
+.order{
+    width: 50%;
+    margin: 0 auto;
+}
+.input-responsive{
+    width: 96%;
+    padding: 1%;
+    margin-bottom: 3%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.order-label{
+    margin-bottom: 1%; 
+    font-weight: bold;
+}
+
+
+/* CSS for Mobile Size or Smaller Screen */
+
+@media only screen and (max-width:768px){
+    .logo{
+        width: 80%;
+        float: none;
+        margin: 1% auto;
+    }
+
+    .menu ul{
+        text-align: center;
+    }
+
+    .blog-search input[type="search"]{
+        width: 90%;
+        padding: 2%;
+        margin-bottom: 3%;
+    }
+
+    .btn{
+        width: 91%;
+        padding: 2%;
+    }
+
+    .blog-search{
+        padding: 10% 0;
+    }
+
+    .categories{
+        padding: 20% 0;
+    }
+    h2{
+        margin-bottom: 10%;
+    }
+    .box-3{
+        width: 100%;
+        margin: 4% auto;
+    }
+
+    .blog-menu{
+        padding: 20% 0;
+    }
+
+    .blog-menu-box{
+        width: 90%;
+        padding: 5%;
+        margin-bottom: 5%;
+    }
+    .social{
+        padding: 5% 0;
+    }
+    .order{
+        width: 100%;
+    }
+}
